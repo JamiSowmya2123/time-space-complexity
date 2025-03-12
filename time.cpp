@@ -1,5 +1,4 @@
 //PRIME NUMBER OF TWO TYPES WITH RESPECT TO DIFFERENT TIME COMPLEXITITES:
-
 //CODE 1:
 
 #include<bits/stdc++.h>
@@ -60,6 +59,32 @@ cin>>num;
 //for(int i=2;i<n;i++)     time complexity is O(n).
 
 
+//CODE:3 
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	int n;
+	cin>>n;
+	vector<int>Seive(n+1,true);
+	Seive[0]=Seive[1]=false;
+	for(int i=2;i<sqrt(n);i++) {
+		if(Seive[i]) {
+			for(int j=i+i;j<=n;j=j+i) {
+				Seive[j]=false;
+			}
+		}
+	}  for(int i=0;i<Seive.size();i++)
+{
+	if(Seive[i]==true) {
+	
+	cout<<i<<" "<<"is prime"<<endl;
+}
+}
+return 0;
+
+}
+
 
 
 
@@ -111,6 +136,7 @@ int main()
 
 
 //GCD AND LCM:
+
 #include<iostream>
 using namespace std;
 int main()
